@@ -11,13 +11,26 @@ export class Order {
       ORDERING: (sInput) => {
         let aReturn = [];
         this.isDone = true;
+        //aReturn.push("you have ordered a " + drink)
+        //aReturn.push("you have ordered a " + $size + " " + $drink + " with " + topping + upsell);
         // SET DRINK
-        if (sInput.toLowerCase().startsWith('m')) {
-          let drink = 'milk tea';
+        setDrink;
+        function setDrink(){
+          let drink;
+          if (sInput.toLowerCase().startsWith('m')) {
+            drink = 'milk tea';
+          }
+          else if (sInput.toLowerCase().startsWith('f')) {
+            drink = 'fruit tea';
+          }
+          return drink;
         }
-        else if (sInput.toLowerCase().startsWith('f')) {
-          let drink = 'fruit tea';
-        }
+        console.log(`drink is ${setDrink('m')}`);
+      }
+    }
+  }
+}
+/*
         // SET SIZE
         aReturn.push("What size would you like?");
         aReturn.push("<ul><li>Large</li> <li>Regular</li>");
@@ -27,7 +40,6 @@ export class Order {
         else if (sInput.toLowerCase().startsWith('r')) {
           let size = 'regular';
         }
-
         // SET TOPPING
         aReturn.push("What topping would you like?");
         aReturn.push("<ul><li>Tapioca</li> <li>Jelly</li>");
@@ -47,7 +59,7 @@ export class Order {
         else {
           let upsell = '.';
         }
-        aReturn.push("you have ordered a " + size + " " + drink + " with " + topping + upsell);
+       
       }
     };
 
@@ -61,4 +73,4 @@ export class Order {
   isDone() {
     return this.isDone;
   }
-}
+}*/
