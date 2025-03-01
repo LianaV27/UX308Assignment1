@@ -3,19 +3,26 @@ export class Order {
       this.OrderState = {
         WELCOMING: () => {
           let aReturn = [];
-          this.stateCur = this.OrderState.RESERVING;
-          aReturn.push("Welcome to Rich's Acton Rapid Test.");
-          aReturn.push("Would you like to reserve a rapid test kit?");
+          this.stateCur = this.OrderState.ORDERING;
+          aReturn.push("Welcome to Liana's Tea Shop.");
+          aReturn.push("What kind of drink would you like today?");
+          aReturn.push("<h2>Drink Menu</h2><ul><li>Milk Tea</li> <li>Fruit Tea</li> </ul>");
           return aReturn;
         },
-        RESERVING: (sInput) => {
+        ORDERING: (sInput) => {
           let aReturn = [];
           this.isDone = true;
-          if (sInput.toLowerCase().startsWith('y')) {
-            aReturn.push(`Your rapid test is reserved under the phone number ${this.sFrom}`);
-            let d = new Date();
-            d.setMinutes(d.getMinutes() + 120);
-            aReturn.push(`Please pick it up at 123 Tidy St., Acton before ${d.toTimeString()}`);
+          if (sInput.toLowerCase().startsWith('m')) {
+            let drink = 'milk tea';
+            aReturn.push("What size would you like?");
+            aReturn.push("<ul><li>Large</li> <li>Medium</li>");
+            aReturn.push("What topping would you like?");
+            aReturn.push("<ul><li>Boba</li> <li>Jelly</li>");
+            aReturn.push("you have ordered" + drink);
+          } 
+          else if (sInput.toLowerCase().startsWith('s')){
+            aReturn.push("Thanks for trying our reservation system");
+            aReturn.push("Maybe next time");
           } else {
             aReturn.push("Thanks for trying our reservation system");
             aReturn.push("Maybe next time");
