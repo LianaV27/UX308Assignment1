@@ -1,17 +1,17 @@
 export class Order {
   constructor(sFrom) {
     this.OrderState = {
-      WELCOMING: () => {
+      ORDERING: () => {
         let aReturn = [];
-        this.stateCur = this.OrderState.ORDERING;
+        this.stateCur = this.OrderState.TOPPING;
         aReturn.push("Welcome to Sakura Tea Shop! What kind of drink would you like today?");
         aReturn.push("<h3>Drink Menu</h3><ul><li>Milk Tea</li> <li>Fruit Tea</li> </ul>");
         return aReturn;
       },
 
-      ORDERING: (sInput) => {
+      TOPPING: (sInput) => {
         let aReturn = [];
-        this.stateCur = this.OrderState.TOPPINGS;
+        this.stateCur = this.OrderState.SIZING;
         if (sInput.toLowerCase().startsWith('m')) {
           aReturn.push("One Milk Tea coming up! What topping would you like?");
           aReturn.push("<h3>Toppings</h3><ul><li>Tapioca Pearls</li> <li>Rainbow Jelly</li> </ul>");
@@ -23,9 +23,9 @@ export class Order {
         return aReturn;
       },
 
-      TOPPINGS: (sInput) => {
+      SIZING: (sInput) => {
         let aReturn = [];
-        this.stateCur = this.OrderState.SIZING;
+        this.stateCur = this.OrderState.UPSELLING;
         if (sInput.toLowerCase().startsWith('t')) {
           aReturn.push("Tapioca Pearls selected! What size drink will you have?")
           aReturn.push("<h3>Sizes</h3><ul><li>Large</li> <li>Regular</li> </ul>");
@@ -36,9 +36,9 @@ export class Order {
         return aReturn;
       },
 
-      SIZING: (sInput) => {
+      UPSELLING: (sInput) => {
         let aReturn = [];
-        this.stateCur = this.OrderState.UPSELLING;
+        this.stateCur = this.OrderState.CONFIRMING;
         if (sInput.toLowerCase().startsWith('l')) {
           aReturn.push("One large tea coming up! Would you like a bubble waffle with that for $3.00?");
         } else {
@@ -48,7 +48,7 @@ export class Order {
         return aReturn;
       },
 
-      UPSELLING: (sInput) => {
+      CONFIRMING: (sInput) => {
         let aReturn = [];
         this.isDone = true;
         if (sInput.toLowerCase().startsWith('y')) {
@@ -68,7 +68,7 @@ export class Order {
       }
     };
 
-    this.stateCur = this.OrderState.WELCOMING;
+    this.stateCur = this.OrderState.ORDERING;
     this.isDone = false;
     this.sFrom = sFrom;
   }
