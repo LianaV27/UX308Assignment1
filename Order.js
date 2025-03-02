@@ -52,13 +52,13 @@ export class Order {
         let aReturn = [];
         this.isDone = true;
         if (sInput.toLowerCase().startsWith('y')) {
-          aReturn.push("Thank You for choosing Cherry Blossom Tea!🌸 Your order of a tea and bubble waffle has been placed!");
+          aReturn.push("<h3>Thank You for choosing Cherry Blossom Tea!🌸</h3> Your order of a tea and bubble waffle has been placed!");
           aReturn.push("Your total is $10.50. Your order number is " + Math.floor(Math.random() * 100) + 1);
           let d = new Date();
           d.setMinutes(d.getMinutes() + 15);
           aReturn.push(`Your order will be ready at ${d.toTimeString()}. Please pick it up at 127 Brew St., Brantford.`);
         } else {
-          aReturn.push("Thank You for choosing Cherry Blossom Tea!🌸 Your order of a tea has been placed!");
+          aReturn.push("<h3>Thank You for choosing Cherry Blossom Tea!🌸</h3> Your order of a tea has been placed!");
           aReturn.push("Your total is $7.50. Your order number is " + Math.floor(Math.random() * 100) + 1);
           let d = new Date();
           d.setMinutes(d.getMinutes() + 15);
