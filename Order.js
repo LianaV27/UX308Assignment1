@@ -25,7 +25,7 @@ export class Order {
 
       SIZING: (sInput) => {
         let aReturn = [];
-        this.stateCur = this.OrderState.UPSELLING;
+        this.stateCur = this.OrderState.WAFFLING;
         if (sInput.toLowerCase().startsWith('t')) {
           aReturn.push("Tapioca Pearls selected! What size drink will you have?")
           aReturn.push("<h3>Sizes</h3><ul><li>Large</li> <li>Regular</li> </ul>");
@@ -36,7 +36,7 @@ export class Order {
         return aReturn;
       },
 
-      UPSELLING: (sInput) => {
+      WAFFLING: (sInput) => {
         let aReturn = [];
         this.stateCur = this.OrderState.CONFIRMING;
         if (sInput.toLowerCase().startsWith('l')) {
