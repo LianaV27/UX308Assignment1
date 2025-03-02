@@ -4,7 +4,7 @@ export class Order {
       ORDERING: () => {
         let aReturn = [];
         this.stateCur = this.OrderState.TOPPING;
-        aReturn.push("Welcome to Cherry Blossom Tea Shop! What kind of drink would you like today?");
+        aReturn.push("<h3>Welcome to Cherry Blossom Tea Shop!🌸</h3> What kind of drink would you like today?");
         aReturn.push("<h3>Drink Menu</h3><ul><li>Milk Tea</li> <li>Fruit Tea</li> </ul>");
         return aReturn;
       },
@@ -52,13 +52,13 @@ export class Order {
         let aReturn = [];
         this.isDone = true;
         if (sInput.toLowerCase().startsWith('y')) {
-          aReturn.push("Thank You for choosing Cherry Blossom Tea! Your order of a tea and bubble waffle has been placed!");
+          aReturn.push("Thank You for choosing Cherry Blossom Tea!🌸 Your order of a tea and bubble waffle has been placed!");
           aReturn.push("Your total is $10.50. Your order number is " + Math.floor(Math.random() * 100) + 1);
           let d = new Date();
           d.setMinutes(d.getMinutes() + 15);
           aReturn.push(`Your order will be ready at ${d.toTimeString()}. Please pick it up at 127 Brew St., Brantford.`);
         } else {
-          aReturn.push("Thank You for choosing Cherry Blossom Tea! Your order of a tea has been placed!");
+          aReturn.push("Thank You for choosing Cherry Blossom Tea!🌸 Your order of a tea has been placed!");
           aReturn.push("Your total is $7.50. Your order number is " + Math.floor(Math.random() * 100) + 1);
           let d = new Date();
           d.setMinutes(d.getMinutes() + 15);
